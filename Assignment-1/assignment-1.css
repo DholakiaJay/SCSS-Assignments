@@ -13,7 +13,7 @@ body {
 }
 body .container {
   border: 1px solid black;
-  background-color: whitesmoke;
+  background-color: rgba(245, 245, 245, 0.955);
   height: 450px;
   width: 540px;
   border-radius: 12px;
