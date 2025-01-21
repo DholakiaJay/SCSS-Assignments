@@ -1,0 +1,34 @@
+@use "sass:color";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box {
+  height: 300px;
+  width: 300px;
+  border-radius: 12px;
+  border: 1px solid black;
+}
+
+$bgColor: yellow;
+$propertyName: "bg";
+
+@each $propertyName in $propertyName {
+  @each $bgColor in $bgColor {
+    @for $i from 1 through 10 {
+      .#{$propertyName}-#{$bgColor}-#{$i*100} {
+        $shade: 100-($i * 10);
+        background-color: color.change($bgColor, $lightness: $shade * 1%);
+      }
+    }
+  }
+}
